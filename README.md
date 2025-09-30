@@ -4,7 +4,7 @@
 **Fecha:** Septiembre 2025
 
 
-## Descripción del Proyecto
+## Descripción del Taller
 
 Este proyecto es una implementación en Java de varios algoritmos fundamentales de la teoría de grafos, desarrollado como parte del taller de la materia. El programa presenta una interfaz de menú interactiva en la consola que permite al usuario ejecutar y probar cada uno de los algoritmos sobre grafos predefinidos, tal como se especifica en los requisitos del taller.
 
