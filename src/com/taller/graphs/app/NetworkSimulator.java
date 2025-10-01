@@ -10,7 +10,7 @@ public class NetworkSimulator {
     private final BfsAlgorithm bfs;
 
     public NetworkSimulator() {
-        this.network = new Graph(6); // Red con 6 nodos, como pide el taller
+        this.network = new Graph(6); 
         this.scanner = new Scanner(System.in);
         this.bfs = new BfsAlgorithm();
 
