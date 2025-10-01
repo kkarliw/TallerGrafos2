@@ -3,29 +3,20 @@ package com.taller.graph.algorithms;
 import com.taller.graph.core.Graph;
 import com.taller.graph.core.Edge;
 
-public class WarshallAlgorithm { // <-- La clase empieza aquí
-
-    // Este es el método principal del algoritmo
+public class WarshallAlgorithm { 
     public void findTransitiveClosure(Graph graph) {
         int numVertices = graph.getVertices();
         boolean[][] reach = new boolean[numVertices][numVertices];
 
-        // --- ESTRUCTURA CORREGIDA ---
-        // Los pasos ahora están uno después del otro, no anidados.
-
-        // PASO 1: Inicializar la matriz. Un nodo siempre se alcanza a sí mismo.
         for (int i = 0; i < numVertices; i++) {
             reach[i][i] = true;
         }
-
-        // PASO 2: Añadir las conexiones directas del grafo.
         for (int i = 0; i < numVertices; i++) {
             for (Edge edge : graph.getNeighbors(i)) {
                 reach[edge.source][edge.destination] = true;
             }
         }
 
-        // PASO 3: Algoritmo de Warshall (lógica principal).
         for (int k = 0; k < numVertices; k++) {
             for (int i = 0; i < numVertices; i++) {
                 for (int j = 0; j < numVertices; j++) {
@@ -34,17 +25,11 @@ public class WarshallAlgorithm { // <-- La clase empieza aquí
             }
         }
 
-        // PASO 4: Mostrar los resultados (UNA SOLA VEZ, al final).
         printReachabilityMatrix(reach, numVertices);
         checkStronglyConnected(reach, numVertices);
-    } // <-- El método findTransitiveClosure TERMINA AQUÍ.
-
-
-    // --- ESTRUCTURA CORREGIDA ---
-    // Los métodos de ayuda ahora están FUERA de findTransitiveClosure,
-    // pero DENTRO de la clase WarshallAlgorithm.
-
-    private void printReachabilityMatrix(boolean[][] reach, int numVertices) {
+    } 
+    
+ reach, int numVertices) {
         System.out.println("Matriz de alcanzabilidad (Cierre Transitivo):");
         for (int i = 0; i < numVertices; i++) {
             for (int j = 0; j < numVertices; j++) {
