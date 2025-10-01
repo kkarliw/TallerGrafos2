@@ -14,7 +14,6 @@ public class FloydWarshallAlgorithm {
         int[][] dist = new int[numVertices][numVertices];
         int[][] next = new int[numVertices][numVertices];
 
-        // 1. Inicializar las matrices
         for (int i = 0; i < numVertices; i++) {
             for (int j = 0; j < numVertices; j++) {
                 dist[i][j] = (i == j) ? 0 : INF;
@@ -29,7 +28,6 @@ public class FloydWarshallAlgorithm {
             }
         }
 
-        // 2. Algoritmo principal
         for (int k = 0; k < numVertices; k++) {
             for (int i = 0; i < numVertices; i++) {
                 for (int j = 0; j < numVertices; j++) {
@@ -40,11 +38,8 @@ public class FloydWarshallAlgorithm {
                 }
             }
         }
-
-        // 3. Mostrar los resultados
-        // --- ¡ESTA PARTE ES LA QUE TE FALTABA EN LA SALIDA! ---
+        
         printDistanceMatrix(dist, numVertices);
-
         System.out.println("\n--- Camino Mínimo Específico ---");
         printPath(dist, next, 0, 3);
     }
